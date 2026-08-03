@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import MobileNav from "../components/MobileNav";
+import CatalogFilter from "../components/CatalogFilter";
+import FaqAccordion from "../components/FaqAccordion";
+import DiagnosticForm from "../components/DiagnosticForm";
+import { contact, seo, whatsappUrl } from "../config/site";
+import { services } from "../data/services";
+import { products } from "../data/products";
+import { testimonials } from "../data/testimonials";
+import { faqs } from "../data/faqs";
+const schema = [
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":contact.brandName,"description":seo.description,"email":contact.email,"areaServed":contact.city,"url":seo.canonical},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":faqs.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))},
+  {"@context":"https://schema.org","@type":"ItemList","itemListElement":products.map((p,i)=>({"@type":"ListItem","position":i+1,"item":{"@type":"Product","name":p.name,"description":p.description,"sku":p.reference}}))}
+];
+---
+<BaseLayout schema={schema}>
+  <div class="top"><span>Atención con cita · {contact.city}</span><span>Diagnóstico especializado en 24-48 horas</span></div>
+  <header class="nav">
+    <a class="brand" href="#inicio"><span class="mark">AM</span><span>{contact.brandName}</span></a>
+    <nav class="desktop"><a href="#servicios">Servicios</a><a href="#coleccion">Colección</a><a href="#metodo">Nuestro método</a><a href="#preguntas">Preguntas frecuentes</a><a href="#contacto">Contacto</a><a class="button" href="#valuacion">Valuar mi equipo</a></nav>
+    <MobileNav client:load />
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="copy reveal"><p class="eyebrow">{contact.baseline}</p><h1>El tiempo no vuelve <em>obsoleta</em> una gran máquina.</h1><p class="lead">Devolvemos a la vida Macs clásicos y equipos Apple de colección con criterio técnico, respeto histórico y acabados de museo.</p><div class="actions"><a class="button" href="#formulario">Solicitar diagnóstico</a><a class="textlink" href="#coleccion">Explorar la colección</a></div><div class="facts"><b>+18<span>años de experiencia</span></b><b>320<span>equipos preservados</span></b><b>90 días<span>de garantía</span></b></div></div>
+      <div class="visual"><picture><source srcset="/images/hero-mac.avif" type="image/avif" /><img src="/images/hero-mac.webp" width="900" height="900" alt="Macintosh clásico restaurado en un ambiente de colección" /></picture><div class="condition">CONDICIÓN<br /><strong>Restaurada · A+</strong></div></div>
+    </section>
+    <section class="manifest"><span>NO REPARAMOS OBJETOS.</span><h2>Preservamos historias que todavía merecen <em>encender.</em></h2><p>{contact.brandName} · {contact.city}</p></section>
+    <section class="section" id="servicios"><div class="head"><p class="eyebrow">Lo que hacemos</p><h2>Servicio técnico con <em>criterio de coleccionista.</em></h2></div><div class="cards">{services.map((s,i)=><article class="card reveal"><span>0{i+1}</span><h3>{s.title}</h3><p>{s.description}</p><a href={whatsappUrl(`Hola Archivo Mac. Me interesa: ${s.title}`)}>{s.note}</a></article>)}</div></section>
+    <section class="section dark" id="coleccion"><div class="head"><p class="eyebrow">Selección actual</p><h2>Máquinas con historia. <em>Listas para la siguiente.</em></h2></div><CatalogFilter client:load /></section>
+    <section class="section method" id="metodo"><div><p class="eyebrow">Estándar Archivo</p><h2>Rigor técnico. <em>Respeto por lo original.</em></h2><p>Conservamos piezas originales cuando es posible, documentamos componentes, trazabilidad, fotografías, pruebas de estabilidad y valor histórico.</p></div><ol class="steps"><li><b>Registro</b><span>Fotografías, número de serie, configuración y estado exterior.</span></li><li><b>Diagnóstico</b><span>Pruebas técnicas y dictamen claro antes de intervenir.</span></li><li><b>Intervención</b><span>Reparación especializada con componentes trazables.</span></li><li><b>Certificación</b><span>Pruebas de estabilidad y expediente final de servicio.</span></li></ol></section>
+    <section class="section value" id="valuacion"><h2>¿Quieres vender o valuar una Mac antigua?</h2><p>Envía fotografías generales, número de serie, modelo, año aproximado, estado, accesorios, caja y documentación originales.</p><a class="button" href={whatsappUrl("Hola Archivo Mac. Quiero vender o valuar una Mac antigua. Tengo fotografías, número de serie, modelo, estado y accesorios para compartir.")}>Enviar información por WhatsApp</a></section>
+    <section class="quote">{testimonials.map((t)=><blockquote><p>“{t.quote}”</p><cite>{t.author} · {t.role}{t.provisional ? " · Testimonio provisional" : ""}</cite></blockquote>)}</section>
+    <section class="section faq" id="preguntas"><div><p class="eyebrow">Preguntas frecuentes</p><h2>Antes de traer <em>tu Mac.</em></h2></div><FaqAccordion client:load /></section>
+    <section class="section contact" id="contacto"><p class="eyebrow">Hablemos de tu equipo</p><h2>¿Qué historia quieres volver a encender?</h2><p>Envíanos fotografías, el modelo del equipo y una breve descripción. Te responderemos con los siguientes pasos.</p><div class="contact-grid"><a class="button" href={whatsappUrl("Hola Archivo Mac. Quiero solicitar información sobre un equipo antiguo.")}>WhatsApp</a><a href={`mailto:${contact.email}`}>{contact.email}</a><span>{contact.hours}</span><span>{contact.city}</span><strong>{contact.appointmentNote}</strong></div></section>
+    <section class="section form-section" id="formulario"><div class="head"><p class="eyebrow">Solicitud</p><h2>Diagnóstico especializado</h2></div><DiagnosticForm client:load /></section>
+  </main>
+</BaseLayout>

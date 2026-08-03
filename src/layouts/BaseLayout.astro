@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+import { contact, seo } from "../config/site";
+const schema = Astro.props.schema ?? [];
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <meta name="keywords" content={seo.keywords.join(", ")} />
+    <link rel="canonical" href={seo.canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:url" content={seo.canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <slot />
+    <footer>
+      <a class="brand" href="#inicio"><span class="mark">AM</span><span>{contact.brandName}</span></a>
+      <p>Reparación, mantenimiento, restauración y venta de Macs vintage en {contact.city}.</p>
+      <nav><a href="#servicios">Servicios</a><a href="#coleccion">Colección</a><a href="#contacto">Contacto</a><a href={contact.instagramUrl}>Instagram</a></nav>
+      <small>© 2026 {contact.brandName}. Apple y sus productos son marcas de sus respectivos propietarios. Archivo Mac es un taller independiente y no está afiliado ni autorizado por Apple Inc.</small>
+    </footer>
+  </body>
+</html>
