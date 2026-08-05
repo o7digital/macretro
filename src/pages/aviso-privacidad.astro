@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { content } from "../data/i18n";
+
+const t = content.es;
+const contact = t.contact;
+const seo = {
+  ...t.seo,
+  title: "Aviso de Privacidad | Archivo Mac",
+  description:
+    "Aviso de Privacidad de Archivo Mac para usuarios, clientes y visitantes que solicitan diagnostico, reparacion, restauracion, valuacion o compra venta de equipos Apple antiguos.",
+  canonical: "https://archivomac.mx/aviso-privacidad",
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "PrivacyPolicy",
+  name: "Aviso de Privacidad Archivo Mac",
+  url: seo.canonical,
+  publisher: {
+    "@type": "Organization",
+    name: contact.brandName,
+    email: contact.email,
+  },
+};
+---
+<BaseLayout schema={schema} contact={contact} seo={seo} htmlLang="es" footerText={t.footer} footerSummary={t.footerSummary}>
+  <main class="privacy-page">
+    <section class="privacy-hero">
+      <p class="eyebrow">Privacidad y datos personales</p>
+      <h1>Aviso de Privacidad</h1>
+      <p>Ultima actualizacion: Agosto 2026</p>
+    </section>
+
+    <section class="privacy-content">
+      <article>
+        <h2>Responsable del tratamiento</h2>
+        <p>Archivo Mac, taller independiente especializado en diagnostico, reparacion, mantenimiento, restauracion, compra, venta y valuacion de Macs antiguos y equipos Apple de coleccion, es responsable del tratamiento de los datos personales que usted nos proporciona.</p>
+        <p>Contacto de privacidad: <a href={`mailto:${contact.email}`}>{contact.email}</a>. Atencion unicamente con cita en {contact.city}.</p>
+      </article>
+
+      <article>
+        <h2>Datos personales que podemos recabar</h2>
+        <p>Podemos recabar datos de identificacion y contacto, como nombre, telefono, correo electronico, ciudad, datos de facturacion cuando sean necesarios, asi como informacion relacionada con el equipo: modelo, numero de serie, ano aproximado, estado fisico y funcional, fotografias, accesorios, historial de reparaciones, descripcion de fallas y preferencias de servicio.</p>
+        <p>No solicitamos datos personales sensibles. Si usted comparte informacion adicional de forma voluntaria, sera tratada solo para atender su solicitud.</p>
+      </article>
+
+      <article>
+        <h2>Finalidades primarias</h2>
+        <ul>
+          <li>Responder solicitudes de informacion, diagnostico, reparacion, restauracion, mantenimiento, valuacion, compra o venta de equipos.</li>
+          <li>Identificar el equipo, documentar su estado y preparar opciones tecnicas antes de una intervencion.</li>
+          <li>Coordinar citas, recepcion, entrega, envio, seguimiento y garantia del servicio realizado.</li>
+          <li>Elaborar expedientes de servicio con fotografias, componentes, pruebas de estabilidad y recomendaciones de conservacion.</li>
+          <li>Cumplir obligaciones legales, fiscales, contractuales y de seguridad aplicables.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>Finalidades secundarias</h2>
+        <p>Tambien podemos usar sus datos para enviar informacion comercial, novedades, recomendaciones de conservacion, disponibilidad de equipos o piezas de coleccion, encuestas de satisfaccion y mejoras del servicio. Usted puede oponerse a estas finalidades enviando un correo a <a href={`mailto:${contact.email}`}>{contact.email}</a>.</p>
+      </article>
+
+      <article>
+        <h2>Olivia AI y canales digitales</h2>
+        <p>Cuando utiliza Olivia AI, formularios, WhatsApp, correo electronico o redes sociales, podemos registrar el contenido de la conversacion, pagina visitada, idioma, fecha, hora y datos tecnicos necesarios para dar seguimiento. Olivia AI ayuda a ordenar la solicitud inicial y puede enviar la conversacion al Channel Manager de Archivo Mac para atencion humana.</p>
+        <p>La informacion enviada por estos canales debe limitarse a lo necesario para atender su caso. No comparta contrasenas, informacion bancaria, datos de terceros sin autorizacion ni archivos que no sean relevantes para el servicio.</p>
+      </article>
+
+      <article>
+        <h2>Transferencias y encargados</h2>
+        <p>No vendemos sus datos personales. Podemos compartirlos con proveedores tecnologicos, servicios de hospedaje, correo, mensajeria, herramientas de gestion de conversaciones, asesores contables, autoridades competentes o terceros necesarios para cumplir una solicitud concreta, siempre bajo medidas de confidencialidad y seguridad.</p>
+      </article>
+
+      <article>
+        <h2>Conservacion</h2>
+        <p>Conservaremos sus datos durante el tiempo necesario para cumplir las finalidades descritas, dar seguimiento al servicio, atender garantias, documentar intervenciones tecnicas y cumplir obligaciones legales. Cuando los datos dejen de ser necesarios, se eliminaran o anonimizaran de forma razonable.</p>
+      </article>
+
+      <article>
+        <h2>Medidas de seguridad</h2>
+        <p>Aplicamos medidas administrativas, tecnicas y fisicas para proteger la informacion contra perdida, alteracion, acceso no autorizado, uso indebido o destruccion. Estas medidas incluyen acceso limitado, herramientas protegidas, uso de HTTPS y practicas de resguardo razonables para expedientes y comunicaciones.</p>
+      </article>
+
+      <article>
+        <h2>Derechos ARCO</h2>
+        <p>Usted puede solicitar acceso, rectificacion, cancelacion u oposicion al tratamiento de sus datos personales, asi como revocar su consentimiento cuando proceda.</p>
+        <p>Para ejercer estos derechos, envie una solicitud a <a href={`mailto:${contact.email}`}>{contact.email}</a> con nombre completo, medio de contacto, identificacion que acredite su identidad y una descripcion clara del derecho que desea ejercer. Responderemos conforme a los plazos previstos por la legislacion mexicana aplicable.</p>
+      </article>
+
+      <article>
+        <h2>Uso de cookies y analitica</h2>
+        <p>El sitio puede utilizar cookies o tecnologias similares para funcionamiento tecnico, seguridad, medicion de trafico y mejora de experiencia. Puede configurar su navegador para limitar o bloquear cookies, aunque algunas funciones podrian verse afectadas.</p>
+      </article>
+
+      <article>
+        <h2>Cambios al aviso</h2>
+        <p>Este Aviso de Privacidad puede modificarse por cambios legales, operativos o de servicio. La version vigente se publicara en <a href="/aviso-privacidad">https://archivomac.mx/aviso-privacidad</a>.</p>
+      </article>
+    </section>
+  </main>
+</BaseLayout>
