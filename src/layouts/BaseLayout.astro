@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import PrivacyFloatingButton from "../components/PrivacyFloatingButton";
 import { languageLabels, languages, localizedPath } from "../data/i18n";
 const schema = Astro.props.schema ?? [];
 const { contact, seo, htmlLang = "es", footerText, footerSummary } = Astro.props;
@@ -26,6 +27,7 @@ const { contact, seo, htmlLang = "es", footerText, footerSummary } = Astro.props
   </head>
   <body>
     <slot />
+    <PrivacyFloatingButton client:load />
     <footer>
       <a class="brand" href="#inicio"><span class="mark">AM</span><span class="brand-text"><span>{contact.brandName}</span><span class="brand-subtitle">RETROMACNIA</span></span></a>
       <p>{footerSummary}</p>
