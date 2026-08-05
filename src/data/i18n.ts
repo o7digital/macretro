@@ -19,7 +19,7 @@ export const content: any = {
   es: {
     htmlLang: "es",
     contact: {
-      brandName: "Archivo Mac",
+      brandName: "RETROMACNIA",
       baseline: "Restauración · conservación · colección",
       city: "Ciudad de México",
       email: "hola@archivomac.mx",
@@ -29,7 +29,7 @@ export const content: any = {
       instagramUrl: "https://www.instagram.com/"
     },
     seo: {
-      title: "Reparación y restauración de Macs antiguos en CDMX | Archivo Mac",
+      title: "Reparación y restauración de Macs antiguos en CDMX | RETROMACNIA",
       description:
         "Reparación, mantenimiento, restauración, compra y venta de Macs antiguos y equipos Apple de colección en Ciudad de México.",
       canonical: "https://archivomac.mx/",
@@ -95,7 +95,7 @@ export const content: any = {
       servicesTitle: "Servicio técnico con criterio de coleccionista.",
       collectionEyebrow: "Modelos de época",
       collectionTitle: "Máquinas con historia. Iconos del Mac retro.",
-      methodEyebrow: "Estándar Archivo",
+      methodEyebrow: "Estándar RETROMACNIA",
       methodTitle: "Rigor técnico. Respeto por lo original.",
       methodText:
         "Conservamos piezas originales cuando es posible, documentamos componentes, trazabilidad, fotografías, pruebas de estabilidad y valor histórico.",
@@ -202,20 +202,20 @@ export const content: any = {
       ["La valuación fue seria, sin promesas infladas. Entendieron el valor histórico del lote y también sus límites técnicos.", "Andrés R.", "Archivo privado"]
     ],
     footer:
-      "Apple y sus productos son marcas de sus respectivos propietarios. Archivo Mac es un taller independiente y no está afiliado ni autorizado por Apple Inc.",
+      "Apple y sus productos son marcas de sus respectivos propietarios. RETROMACNIA es un taller independiente y no está afiliado ni autorizado por Apple Inc.",
     footerSummary: "Reparación, mantenimiento, restauración y documentación de Macs vintage en Ciudad de México.",
     provisional: "Testimonio provisional",
     whatsapp: {
-      service: "Hola Archivo Mac. Me interesa:",
+      service: "Hola RETROMACNIA. Me interesa:",
       value:
-        "Hola Archivo Mac. Quiero vender o valuar una Mac antigua. Tengo fotografías, número de serie, modelo, estado y accesorios para compartir.",
-      contact: "Hola Archivo Mac. Quiero solicitar información sobre un equipo antiguo."
+        "Hola RETROMACNIA. Quiero vender o valuar una Mac antigua. Tengo fotografías, número de serie, modelo, estado y accesorios para compartir.",
+      contact: "Hola RETROMACNIA. Quiero solicitar información sobre un equipo antiguo."
     }
   },
   en: {
     htmlLang: "en",
     contact: {
-      brandName: "Archivo Mac",
+      brandName: "RETROMACNIA",
       baseline: "Restoration · preservation · collection",
       city: "Mexico City",
       email: "hola@archivomac.mx",
@@ -225,7 +225,7 @@ export const content: any = {
       instagramUrl: "https://www.instagram.com/"
     },
     seo: {
-      title: "Vintage Mac repair and restoration in Mexico City | Archivo Mac",
+      title: "Vintage Mac repair and restoration in Mexico City | RETROMACNIA",
       description:
         "Repair, maintenance, restoration, valuation, and historical documentation for vintage Macs and collectible Apple computers in Mexico City.",
       canonical: "https://archivomac.mx/en/",
@@ -279,7 +279,7 @@ export const content: any = {
       servicesTitle: "Technical service with a collector's eye.",
       collectionEyebrow: "Period models",
       collectionTitle: "Machines with history. Icons of retro Mac.",
-      methodEyebrow: "Archivo standard",
+      methodEyebrow: "RETROMACNIA standard",
       methodTitle: "Technical rigor. Respect for the original.",
       methodText:
         "We preserve original parts whenever possible and document components, traceability, photos, stability tests, and historical value.",
@@ -340,20 +340,20 @@ export const content: any = {
       ["The valuation was serious, with no inflated promises. They understood the historical value of the lot and its technical limits.", "Andrés R.", "Private archive"]
     ],
     footer:
-      "Apple and its products are trademarks of their respective owners. Archivo Mac is an independent workshop and is not affiliated with or authorized by Apple Inc.",
+      "Apple and its products are trademarks of their respective owners. RETROMACNIA is an independent workshop and is not affiliated with or authorized by Apple Inc.",
     footerSummary: "Repair, maintenance, restoration, and documentation for vintage Macs in Mexico City.",
     provisional: "Provisional testimonial",
     whatsapp: {
-      service: "Hello Archivo Mac. I am interested in:",
+      service: "Hello RETROMACNIA. I am interested in:",
       value:
-        "Hello Archivo Mac. I want to sell or value an old Mac. I have photos, serial number, model, condition, and accessories to share.",
-      contact: "Hello Archivo Mac. I would like information about an old machine."
+        "Hello RETROMACNIA. I want to sell or value an old Mac. I have photos, serial number, model, condition, and accessories to share.",
+      contact: "Hello RETROMACNIA. I would like information about an old machine."
     }
   },
   fr: {
     htmlLang: "fr",
     contact: {
-      brandName: "Archivo Mac",
+      brandName: "RETROMACNIA",
       baseline: "Restauration · conservation · collection",
       city: "Mexico",
       email: "hola@archivomac.mx",
@@ -363,7 +363,7 @@ export const content: any = {
       instagramUrl: "https://www.instagram.com/"
     },
     seo: {
-      title: "Réparation et restauration de Macs anciens à Mexico | Archivo Mac",
+      title: "Réparation et restauration de Macs anciens à Mexico | RETROMACNIA",
       description:
         "Réparation, maintenance, restauration, estimation et documentation historique de Macs anciens et d'ordinateurs Apple de collection à Mexico.",
       canonical: "https://archivomac.mx/fr/",
@@ -417,7 +417,7 @@ export const content: any = {
       servicesTitle: "Un service technique avec un regard de collectionneur.",
       collectionEyebrow: "Modèles d'époque",
       collectionTitle: "Des machines avec une histoire. Icônes du Mac rétro.",
-      methodEyebrow: "Standard Archivo",
+      methodEyebrow: "Standard RETROMACNIA",
       methodTitle: "Rigueur technique. Respect de l'original.",
       methodText:
         "Nous conservons les pièces originales lorsque c'est possible et documentons composants, traçabilité, photos, tests de stabilité et valeur historique.",
@@ -478,14 +478,14 @@ export const content: any = {
       ["L'estimation était sérieuse, sans promesses gonflées. Ils ont compris la valeur historique du lot et ses limites techniques.", "Andrés R.", "Archive privée"]
     ],
     footer:
-      "Apple et ses produits sont des marques de leurs propriétaires respectifs. Archivo Mac est un atelier indépendant et n'est ni affilié ni autorisé par Apple Inc.",
+      "Apple et ses produits sont des marques de leurs propriétaires respectifs. RETROMACNIA est un atelier indépendant et n'est ni affilié ni autorisé par Apple Inc.",
     footerSummary: "Réparation, maintenance, restauration et documentation de Macs vintage à Mexico.",
     provisional: "Témoignage provisoire",
     whatsapp: {
-      service: "Bonjour Archivo Mac. Je suis intéressé par :",
+      service: "Bonjour RETROMACNIA. Je suis intéressé par :",
       value:
-        "Bonjour Archivo Mac. Je veux vendre ou estimer un ancien Mac. J'ai des photos, le numéro de série, le modèle, l'état et les accessoires à partager.",
-      contact: "Bonjour Archivo Mac. Je souhaite des informations sur une ancienne machine."
+        "Bonjour RETROMACNIA. Je veux vendre ou estimer un ancien Mac. J'ai des photos, le numéro de série, le modèle, l'état et les accessoires à partager.",
+      contact: "Bonjour RETROMACNIA. Je souhaite des informations sur une ancienne machine."
     }
   }
 };
@@ -555,7 +555,7 @@ content.de = {
   htmlLang: "de",
   contact: { ...content.en.contact, baseline: "Restaurierung · Erhaltung · Sammlung", city: "Mexiko-Stadt", hours: "Montag bis Freitag, 10:00-18:00", appointmentNote: "Nur nach Terminvereinbarung" },
   seo: {
-    title: "Reparatur und Restaurierung alter Macs in Mexiko-Stadt | Archivo Mac",
+    title: "Reparatur und Restaurierung alter Macs in Mexiko-Stadt | RETROMACNIA",
     description: "Reparatur, Wartung, Restaurierung, Bewertung und historische Dokumentation alter Macs und sammelbarer Apple-Computer in Mexiko-Stadt.",
     canonical: "https://archivomac.mx/de/",
     image: content.en.seo.image,
@@ -571,13 +571,13 @@ content.de = {
     text: "Wir arbeiten an kompakten Macintosh-Modellen, iMac G3, Power Mac, iBook, PowerBook und frühen Intel-Generationen. Jede Maschine wird technisch und als Sammlerstück betrachtet.",
     items: [["Elektronik-Reparatur", "Recap, Mikrolöten, Netzteile, Anschlüsse, Laufwerke, Festplatten, Speicher und sporadische Fehler."], ["Optische Restaurierung", "Tiefenreinigung, Kunststoffstabilisierung, Vergilbung, Tastatur, Maus, Kabel und Präsentation."], ["Archiv und Nachverfolgung", "Fotos, Seriennummer, Konfiguration, ersetzte Teile, Stabilitätstests und Erhaltungsempfehlungen."]]
   },
-  sections: { servicesEyebrow: "Was wir tun", servicesTitle: "Technischer Service mit Sammlerblick.", collectionEyebrow: "Zeitmodelle", collectionTitle: "Maschinen mit Geschichte. Ikonen des Retro-Mac.", methodEyebrow: "Archivo Standard", methodTitle: "Technische Strenge. Respekt vor dem Original.", methodText: "Wir erhalten Originalteile, wenn möglich, und dokumentieren Komponenten, Herkunft, Fotos, Stabilitätstests und historischen Wert.", valueTitle: "Möchten Sie einen alten Mac verkaufen oder bewerten lassen?", valueText: "Senden Sie Fotos, Seriennummer, Modell, ungefähres Jahr, Zustand, Zubehör, Verpackung und Originaldokumente.", valueCta: "Informationen per WhatsApp senden", faqEyebrow: "FAQ", faqTitle: "Bevor Sie Ihren Mac bringen.", contactEyebrow: "Sprechen wir über Ihre Maschine", contactTitle: "Welche Geschichte möchten Sie wieder einschalten?", contactText: "Senden Sie Fotos, Modell und eine kurze Beschreibung. Wir antworten mit den nächsten Schritten.", formEyebrow: "Anfrage", formTitle: "Spezialisierte Diagnose" },
+  sections: { servicesEyebrow: "Was wir tun", servicesTitle: "Technischer Service mit Sammlerblick.", collectionEyebrow: "Zeitmodelle", collectionTitle: "Maschinen mit Geschichte. Ikonen des Retro-Mac.", methodEyebrow: "RETROMACNIA Standard", methodTitle: "Technische Strenge. Respekt vor dem Original.", methodText: "Wir erhalten Originalteile, wenn möglich, und dokumentieren Komponenten, Herkunft, Fotos, Stabilitätstests und historischen Wert.", valueTitle: "Möchten Sie einen alten Mac verkaufen oder bewerten lassen?", valueText: "Senden Sie Fotos, Seriennummer, Modell, ungefähres Jahr, Zustand, Zubehör, Verpackung und Originaldokumente.", valueCta: "Informationen per WhatsApp senden", faqEyebrow: "FAQ", faqTitle: "Bevor Sie Ihren Mac bringen.", contactEyebrow: "Sprechen wir über Ihre Maschine", contactTitle: "Welche Geschichte möchten Sie wieder einschalten?", contactText: "Senden Sie Fotos, Modell und eine kurze Beschreibung. Wir antworten mit den nächsten Schritten.", formEyebrow: "Anfrage", formTitle: "Spezialisierte Diagnose" },
   productFilters: ["Alle", "Macintosh", "iMac", "Power Mac", "Portables"],
   steps: [["Erfassung", "Fotos, Seriennummer, Konfiguration und äußerer Zustand."], ["Diagnose", "Technische Tests und klarer Bericht vor jedem Eingriff."], ["Eingriff", "Spezialisierte Reparatur mit nachvollziehbaren Komponenten."], ["Zertifizierung", "Stabilitätstests und abschließende Servicedokumentation."]],
-  footer: "Apple und seine Produkte sind Marken ihrer jeweiligen Eigentümer. Archivo Mac ist eine unabhängige Werkstatt und nicht mit Apple Inc. verbunden oder von Apple autorisiert.",
+  footer: "Apple und seine Produkte sind Marken ihrer jeweiligen Eigentümer. RETROMACNIA ist eine unabhängige Werkstatt und nicht mit Apple Inc. verbunden oder von Apple autorisiert.",
   footerSummary: "Reparatur, Wartung, Restaurierung und Dokumentation von Vintage-Macs in Mexiko-Stadt.",
   provisional: "Vorläufiges Testimonial",
-  whatsapp: { service: "Hallo Archivo Mac. Ich interessiere mich für:", value: "Hallo Archivo Mac. Ich möchte einen alten Mac verkaufen oder bewerten lassen.", contact: "Hallo Archivo Mac. Ich möchte Informationen zu einer alten Maschine." }
+  whatsapp: { service: "Hallo RETROMACNIA. Ich interessiere mich für:", value: "Hallo RETROMACNIA. Ich möchte einen alten Mac verkaufen oder bewerten lassen.", contact: "Hallo RETROMACNIA. Ich möchte Informationen zu einer alten Maschine." }
 };
 
 content.it = {
@@ -585,7 +585,7 @@ content.it = {
   htmlLang: "it",
   contact: { ...content.en.contact, baseline: "Restauro · conservazione · collezione", city: "Città del Messico", hours: "Da lunedì a venerdì, 10:00-18:00", appointmentNote: "Solo su appuntamento" },
   seo: {
-    title: "Riparazione e restauro di Mac vintage a Città del Messico | Archivo Mac",
+    title: "Riparazione e restauro di Mac vintage a Città del Messico | RETROMACNIA",
     description: "Riparazione, manutenzione, restauro, valutazione e documentazione storica di Mac vintage e computer Apple da collezione a Città del Messico.",
     canonical: "https://archivomac.mx/it/",
     image: content.en.seo.image,
@@ -601,13 +601,13 @@ content.it = {
     text: "Lavoriamo su Macintosh compatti, iMac G3, Power Mac, iBook, PowerBook e prime generazioni Intel. Ogni macchina viene valutata come apparecchio tecnico e oggetto da collezione.",
     items: [["Riparazione elettronica", "Recap, microsaldatura, alimentatori, connettori, unità ottiche, dischi, memoria e guasti intermittenti."], ["Restauro estetico", "Pulizia profonda, stabilizzazione delle plastiche, ingiallimento, tastiera, mouse, cavi e presentazione finale."], ["Archivio e tracciabilità", "Foto, numero di serie, configurazione, pezzi sostituiti, test di stabilità e consigli di conservazione."]]
   },
-  sections: { servicesEyebrow: "Cosa facciamo", servicesTitle: "Servizio tecnico con occhio da collezionista.", collectionEyebrow: "Modelli d'epoca", collectionTitle: "Macchine con storia. Icone del Mac retro.", methodEyebrow: "Standard Archivo", methodTitle: "Rigore tecnico. Rispetto dell'originale.", methodText: "Conserviamo i pezzi originali quando possibile e documentiamo componenti, tracciabilità, foto, test di stabilità e valore storico.", valueTitle: "Vuoi vendere o valutare un vecchio Mac?", valueText: "Invia foto, numero di serie, modello, anno approssimativo, stato, accessori, scatola e documenti originali.", valueCta: "Invia informazioni via WhatsApp", faqEyebrow: "FAQ", faqTitle: "Prima di portare il tuo Mac.", contactEyebrow: "Parliamo della tua macchina", contactTitle: "Quale storia vuoi riaccendere?", contactText: "Invia foto, modello e una breve descrizione. Risponderemo con i prossimi passi.", formEyebrow: "Richiesta", formTitle: "Diagnosi specializzata" },
+  sections: { servicesEyebrow: "Cosa facciamo", servicesTitle: "Servizio tecnico con occhio da collezionista.", collectionEyebrow: "Modelli d'epoca", collectionTitle: "Macchine con storia. Icone del Mac retro.", methodEyebrow: "Standard RETROMACNIA", methodTitle: "Rigore tecnico. Rispetto dell'originale.", methodText: "Conserviamo i pezzi originali quando possibile e documentiamo componenti, tracciabilità, foto, test di stabilità e valore storico.", valueTitle: "Vuoi vendere o valutare un vecchio Mac?", valueText: "Invia foto, numero di serie, modello, anno approssimativo, stato, accessori, scatola e documenti originali.", valueCta: "Invia informazioni via WhatsApp", faqEyebrow: "FAQ", faqTitle: "Prima di portare il tuo Mac.", contactEyebrow: "Parliamo della tua macchina", contactTitle: "Quale storia vuoi riaccendere?", contactText: "Invia foto, modello e una breve descrizione. Risponderemo con i prossimi passi.", formEyebrow: "Richiesta", formTitle: "Diagnosi specializzata" },
   productFilters: ["Tutti", "Macintosh", "iMac", "Power Mac", "Portatili"],
   steps: [["Registrazione", "Foto, numero di serie, configurazione e stato esterno."], ["Diagnosi", "Test tecnici e report chiaro prima di ogni intervento."], ["Intervento", "Riparazione specializzata con componenti tracciabili."], ["Certificazione", "Test di stabilità e dossier finale di servizio."]],
-  footer: "Apple e i suoi prodotti sono marchi dei rispettivi proprietari. Archivo Mac è un laboratorio indipendente e non è affiliato né autorizzato da Apple Inc.",
+  footer: "Apple e i suoi prodotti sono marchi dei rispettivi proprietari. RETROMACNIA è un laboratorio indipendente e non è affiliato né autorizzato da Apple Inc.",
   footerSummary: "Riparazione, manutenzione, restauro e documentazione di Mac vintage a Città del Messico.",
   provisional: "Testimonianza provvisoria",
-  whatsapp: { service: "Ciao Archivo Mac. Sono interessato a:", value: "Ciao Archivo Mac. Voglio vendere o valutare un vecchio Mac.", contact: "Ciao Archivo Mac. Vorrei informazioni su una vecchia macchina." }
+  whatsapp: { service: "Ciao RETROMACNIA. Sono interessato a:", value: "Ciao RETROMACNIA. Voglio vendere o valutare un vecchio Mac.", contact: "Ciao RETROMACNIA. Vorrei informazioni su una vecchia macchina." }
 };
 
 content.de.products = content.en.products.map((product: any) => ({ ...product, category: product.category === "Portables" ? "Portables" : product.category }));

@@ -1,6 +1,6 @@
-# Archivo Mac
+# RETROMACNIA
 
-Site Astro pour Archivo Mac, en espagnol, prêt pour Vercel.
+Site Astro pour RETROMACNIA, en espagnol, prêt pour Vercel.
 
 ## Commandes
 
