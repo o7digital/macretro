@@ -1,5 +1,5 @@
 export const contact = {
-  brandName: "RETROMACNIA",
+  brandName: "Archivo Mac",
   baseline: "Restauración · conservación · colección",
   city: "Ciudad de México",
   email: "hola@archivomac.mx",
@@ -10,7 +10,7 @@ export const contact = {
 };
 
 export const seo = {
-  title: "Reparación y restauración de Macs antiguos en CDMX | RETROMACNIA",
+  title: "Reparación y restauración de Macs antiguos en CDMX | Archivo Mac",
   description:
     "Reparación, mantenimiento, restauración, compra y venta de Macs antiguos y equipos Apple de colección en Ciudad de México.",
   canonical: "https://archivomac.mx/",

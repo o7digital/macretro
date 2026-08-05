@@ -27,7 +27,7 @@ const { contact, seo, htmlLang = "es", footerText, footerSummary } = Astro.props
   <body>
     <slot />
     <footer>
-      <a class="brand" href="#inicio"><span class="mark">RM</span><span>{contact.brandName}</span></a>
+      <a class="brand" href="#inicio"><span class="mark">AM</span><span class="brand-text"><span>{contact.brandName}</span><span class="brand-subtitle">RETROMACNIA</span></span></a>
       <p>{footerSummary}</p>
       <nav><a href="#servicios">Servicios</a><a href="#coleccion">Colección</a><a href="#contacto">Contacto</a><a href={contact.instagramUrl}>Instagram</a><span class="language-links">{languages.map((lang) => <a href={localizedPath(lang)}>{languageLabels[lang]}</a>)}</span></nav>
       <small>© 2026 {contact.brandName}. {footerText}</small>

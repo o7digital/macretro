@@ -9,7 +9,7 @@ const formContent = {
     photos: "Preparado para integración backend futura.",
     error: "Completa los campos obligatorios antes de preparar el mensaje.",
     submit: "Preparar mensaje por WhatsApp",
-    intro: "Hola RETROMACNIA. Quiero solicitar un diagnóstico.",
+    intro: "Hola Archivo Mac. Quiero solicitar un diagnóstico.",
     fields: ["Nombre", "Teléfono", "Correo", "Modelo", "Año aproximado", "Servicio", "Estado de funcionamiento", "Descripción"],
     notProvided: "No indicado",
     ready: "Tengo fotografías listas para enviar."
@@ -22,7 +22,7 @@ const formContent = {
     photos: "Prepared for future backend integration.",
     error: "Complete the required fields before preparing the message.",
     submit: "Prepare WhatsApp message",
-    intro: "Hello RETROMACNIA. I would like to request a diagnosis.",
+    intro: "Hello Archivo Mac. I would like to request a diagnosis.",
     fields: ["Name", "Phone", "Email", "Model", "Approximate year", "Service", "Working condition", "Description"],
     notProvided: "Not provided",
     ready: "I have photos ready to send."
@@ -35,7 +35,7 @@ const formContent = {
     photos: "Préparé pour une future intégration backend.",
     error: "Complétez les champs obligatoires avant de préparer le message.",
     submit: "Préparer le message WhatsApp",
-    intro: "Bonjour RETROMACNIA. Je souhaite demander un diagnostic.",
+    intro: "Bonjour Archivo Mac. Je souhaite demander un diagnostic.",
     fields: ["Nom", "Téléphone", "E-mail", "Modèle", "Année approximative", "Service", "État de fonctionnement", "Description"],
     notProvided: "Non indiqué",
     ready: "J'ai des photos prêtes à envoyer."
@@ -48,7 +48,7 @@ const formContent = {
     photos: "Für zukünftige Backend-Integration vorbereitet.",
     error: "Füllen Sie die Pflichtfelder aus.",
     submit: "WhatsApp-Nachricht vorbereiten",
-    intro: "Hallo RETROMACNIA. Ich möchte eine Diagnose anfragen.",
+    intro: "Hallo Archivo Mac. Ich möchte eine Diagnose anfragen.",
     fields: ["Name", "Telefon", "E-Mail", "Modell", "Ungefähres Jahr", "Service", "Funktionszustand", "Beschreibung"],
     notProvided: "Nicht angegeben",
     ready: "Ich habe Fotos zum Senden bereit."
@@ -61,7 +61,7 @@ const formContent = {
     photos: "Preparato per futura integrazione backend.",
     error: "Completa i campi obbligatori.",
     submit: "Prepara messaggio WhatsApp",
-    intro: "Ciao RETROMACNIA. Vorrei richiedere una diagnosi.",
+    intro: "Ciao Archivo Mac. Vorrei richiedere una diagnosi.",
     fields: ["Nome", "Telefono", "E-mail", "Modello", "Anno approssimativo", "Servizio", "Stato di funzionamento", "Descrizione"],
     notProvided: "Non indicato",
     ready: "Ho foto pronte da inviare."
