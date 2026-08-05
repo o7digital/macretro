@@ -1,25 +1,38 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
-const links = [
-  ["Servicios", "#servicios"],
-  ["Colección", "#coleccion"],
-  ["Nuestro método", "#metodo"],
-  ["Preguntas frecuentes", "#preguntas"],
-  ["Contacto", "#contacto"]
-];
+type MobileNavProps = {
+  nav: {
+    services: string;
+    collection: string;
+    method: string;
+    faq: string;
+    contact: string;
+    cta: string;
+    open: string;
+    close: string;
+    label: string;
+  };
+};
 
-export default function MobileNav() {
+export default function MobileNav({ nav }: MobileNavProps) {
   const [open, setOpen] = useState(false);
+  const links = [
+    [nav.services, "#servicios"],
+    [nav.collection, "#coleccion"],
+    [nav.method, "#metodo"],
+    [nav.faq, "#preguntas"],
+    [nav.contact, "#contacto"]
+  ];
 
   return (
     <div className="mobile-nav">
-      <button className="icon-button" type="button" aria-label="Abrir menú" aria-expanded={open} onClick={() => setOpen(true)}>
+      <button className="icon-button" type="button" aria-label={nav.open} aria-expanded={open} onClick={() => setOpen(true)}>
         <Menu size={20} />
       </button>
       {open && (
-        <div className="mobile-panel" role="dialog" aria-modal="true" aria-label="Navegación principal">
-          <button className="icon-button close" type="button" aria-label="Cerrar menú" onClick={() => setOpen(false)}>
+        <div className="mobile-panel" role="dialog" aria-modal="true" aria-label={nav.label}>
+          <button className="icon-button close" type="button" aria-label={nav.close} onClick={() => setOpen(false)}>
             <X size={20} />
           </button>
           {links.map(([label, href]) => (
@@ -28,7 +41,7 @@ export default function MobileNav() {
             </a>
           ))}
           <a className="button" href="#valuacion" onClick={() => setOpen(false)}>
-            Valuar mi equipo
+            {nav.cta}
           </a>
         </div>
       )}

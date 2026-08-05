@@ -1,15 +1,30 @@
 import { useMemo, useState } from "react";
-import { productFilters, products } from "../data/products";
-import { whatsappUrl } from "../config/site";
 
-export default function CatalogFilter() {
-  const [filter, setFilter] = useState<(typeof productFilters)[number]>("Todos");
-  const visible = useMemo(() => products.filter((p) => filter === "Todos" || p.category === filter), [filter]);
+type CatalogProduct = {
+  name: string;
+  year: string;
+  version: string;
+  era: string;
+  category: string;
+  reference: string;
+  description: string;
+  image: string;
+  alt: string;
+};
+
+type CatalogFilterProps = {
+  products: CatalogProduct[];
+  filters: string[];
+};
+
+export default function CatalogFilter({ products, filters }: CatalogFilterProps) {
+  const [filter, setFilter] = useState(filters[0]);
+  const visible = useMemo(() => products.filter((p) => filter === filters[0] || p.category === filter), [filter, filters, products]);
 
   return (
     <div className="catalog-tool">
       <div className="filters" role="tablist" aria-label="Filtrar colección">
-        {productFilters.map((item) => (
+        {filters.map((item) => (
           <button
             type="button"
             key={item}
@@ -26,20 +41,13 @@ export default function CatalogFilter() {
         {visible.map((product) => (
           <article className="product reveal" key={product.reference}>
             <picture>
-              <source srcSet={product.gallery[1]} type="image/avif" />
-              <img src={product.gallery[0]} width="720" height="640" loading="lazy" alt={`${product.name} ${product.year} restaurada por Archivo Mac`} />
+              <img src={product.image} width="720" height="640" loading="lazy" alt={product.alt} />
             </picture>
             <div className="product-info">
-              <span>{product.status} · {product.year}</span>
+              <span>{product.era} · {product.year}</span>
               <h3>{product.name}</h3>
-              <p>{product.version} · {product.condition}</p>
+              <p>{product.version}</p>
               <p>{product.description}</p>
-              <div>
-                <strong>{product.price}</strong>
-                <a href={whatsappUrl(`Hola Archivo Mac. Me interesa la pieza ${product.name}, referencia ${product.reference}. ¿Sigue disponible?`)}>
-                  Consultar
-                </a>
-              </div>
               <small>{product.reference}</small>
             </div>
           </article>

@@ -1,10 +1,11 @@
 ---
 import "../styles/global.css";
-import { contact, seo } from "../config/site";
+import { languageLabels, languages, localizedPath } from "../data/i18n";
 const schema = Astro.props.schema ?? [];
+const { contact, seo, htmlLang = "es", footerText, footerSummary } = Astro.props;
 ---
 <!doctype html>
-<html lang="es">
+<html lang={htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -16,16 +17,20 @@ const schema = Astro.props.schema ?? [];
     <meta property="og:title" content={seo.title} />
     <meta property="og:description" content={seo.description} />
     <meta property="og:url" content={seo.canonical} />
+    <meta property="og:image" content={seo.image} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={seo.image} />
+    {languages.map((lang) => <link rel="alternate" hreflang={lang} href={`https://archivomac.mx${localizedPath(lang)}`} />)}
+    <link rel="alternate" hreflang="x-default" href="https://archivomac.mx/" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>
     <slot />
     <footer>
       <a class="brand" href="#inicio"><span class="mark">AM</span><span>{contact.brandName}</span></a>
-      <p>Reparación, mantenimiento, restauración y venta de Macs vintage en {contact.city}.</p>
-      <nav><a href="#servicios">Servicios</a><a href="#coleccion">Colección</a><a href="#contacto">Contacto</a><a href={contact.instagramUrl}>Instagram</a></nav>
-      <small>© 2026 {contact.brandName}. Apple y sus productos son marcas de sus respectivos propietarios. Archivo Mac es un taller independiente y no está afiliado ni autorizado por Apple Inc.</small>
+      <p>{footerSummary}</p>
+      <nav><a href="#servicios">Servicios</a><a href="#coleccion">Colección</a><a href="#contacto">Contacto</a><a href={contact.instagramUrl}>Instagram</a><span class="language-links">{languages.map((lang) => <a href={localizedPath(lang)}>{languageLabels[lang]}</a>)}</span></nav>
+      <small>© 2026 {contact.brandName}. {footerText}</small>
     </footer>
   </body>
 </html>

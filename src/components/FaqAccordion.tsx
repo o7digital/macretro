@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { faqs } from "../data/faqs";
 
-export default function FaqAccordion() {
+type FaqAccordionProps = {
+  faqs: readonly (readonly [string, string])[];
+};
+
+export default function FaqAccordion({ faqs }: FaqAccordionProps) {
   const [open, setOpen] = useState(0);
   return (
     <div className="faq-list">

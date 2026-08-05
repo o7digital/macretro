@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import MobileNav from "./MobileNav";
+import CatalogFilter from "./CatalogFilter";
+import FaqAccordion from "./FaqAccordion";
+import DiagnosticForm from "./DiagnosticForm";
+import { content, languageLabels, languages, localizedPath, type Language } from "../data/i18n";
+
+const { lang = "es" } = Astro.props as { lang?: Language };
+const t = content[lang];
+const { contact, seo } = t;
+
+function whatsappUrl(message: string) {
+  return `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+function emphasize(text: string, emphasis: string) {
+  return text.replace(emphasis, `<em>${emphasis}</em>`);
+}
+
+const schema = [
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":contact.brandName,"description":seo.description,"email":contact.email,"areaServed":contact.city,"url":seo.canonical},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":t.faqs.map(([q,a]: [string, string])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))},
+  {"@context":"https://schema.org","@type":"ItemList","name":t.sections.collectionTitle,"itemListElement":t.products.map((p: any,i: number)=>({"@type":"ListItem","position":i+1,"item":{"@type":"CreativeWork","name":`${p.name} ${p.year}`,"description":p.description,"image":`${seo.canonical.replace(/\/$/,"")}${p.image}`}}))}
+];
+---
+<BaseLayout schema={schema} contact={contact} seo={seo} htmlLang={t.htmlLang} footerText={t.footer} footerSummary={t.footerSummary}>
+  <div class="top"><span>{t.top[0]}</span><span>{t.top[1]}</span></div>
+  <header class="nav">
+    <div class="nav-left">
+      <details class="language-switch">
+        <summary>{languageLabels[lang]}</summary>
+        <div>
+          {languages.filter((item) => item !== lang).map((item) => <a href={localizedPath(item)}>{languageLabels[item]}</a>)}
+        </div>
+      </details>
+      <a class="brand" href="#inicio"><span class="mark">AM</span><span>{contact.brandName}</span></a>
+    </div>
+    <nav class="desktop">
+      <a href="#servicios">{t.nav.services}</a>
+      <a href="#coleccion">{t.nav.collection}</a>
+      <a href="#metodo">{t.nav.method}</a>
+      <a href="#preguntas">{t.nav.faq}</a>
+      <a href="#contacto">{t.nav.contact}</a>
+      <a class="button" href="#valuacion">{t.nav.cta}</a>
+    </nav>
+    <MobileNav client:load nav={t.nav} />
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="copy reveal"><p class="eyebrow">{contact.baseline}</p><h1 set:html={emphasize(t.hero.title, t.hero.emphasis)} /><p class="lead">{t.hero.lead}</p><div class="actions"><a class="button" href="#contacto">{t.hero.primary}</a><a class="textlink" href="#coleccion">{t.hero.secondary}</a></div><div class="facts">{t.hero.facts.map(([value,label]: [string, string]) => <b>{value}<span>{label}</span></b>)}</div></div>
+      <div class="visual"><picture><img src="/ben-szymanski-IXfms-eQ3Ok-unsplash.jpg" width="1920" height="1080" alt={t.hero.alt} /></picture><div class="condition">{t.hero.badge[0]}<br /><strong>{t.hero.badge[1]}</strong></div></div>
+    </section>
+    <section class="manifest"><span>{t.manifest.line}</span><h2 set:html={emphasize(t.manifest.title, lang === "en" ? "turn on" : lang === "fr" ? "s'allumer" : "encender")} /><p>{contact.brandName} · {contact.city}</p></section>
+    <section class="section expertise"><div class="head"><p class="eyebrow">{t.expertise.eyebrow}</p><h2>{t.expertise.title}</h2><p>{t.expertise.text}</p></div><div class="expertise-grid">{t.expertise.items.map(([title,text]: [string, string]) => <article><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+    <section class="section" id="servicios"><div class="head"><p class="eyebrow">{t.sections.servicesEyebrow}</p><h2>{t.sections.servicesTitle}</h2></div><div class="cards">{t.services.map((s: any,i: number)=><article class="card reveal"><span>0{i+1}</span><h3>{s.title}</h3><p>{s.description}</p><a href={whatsappUrl(`${t.whatsapp.service} ${s.title}`)}>{s.note}</a></article>)}</div></section>
+    <section class="section dark" id="coleccion"><div class="head"><p class="eyebrow">{t.sections.collectionEyebrow}</p><h2>{t.sections.collectionTitle}</h2></div><CatalogFilter client:load products={t.products} filters={t.productFilters} /></section>
+    <section class="section method" id="metodo"><div><p class="eyebrow">{t.sections.methodEyebrow}</p><h2>{t.sections.methodTitle}</h2><p>{t.sections.methodText}</p></div><ol class="steps">{t.steps.map(([title,text]: [string, string]) => <li><b>{title}</b><span>{text}</span></li>)}</ol></section>
+    <section class="section value" id="valuacion"><h2>{t.sections.valueTitle}</h2><p>{t.sections.valueText}</p><a class="button" href={whatsappUrl(t.whatsapp.value)}>{t.sections.valueCta}</a></section>
+    <section class="quote">{t.testimonials.map(([quote,author,role]: [string, string, string])=><blockquote><p>“{quote}”</p><cite>{author} · {role} · {t.provisional}</cite></blockquote>)}</section>
+    <section class="section faq" id="preguntas"><div><p class="eyebrow">{t.sections.faqEyebrow}</p><h2>{t.sections.faqTitle}</h2></div><FaqAccordion client:load faqs={t.faqs} /></section>
+    <section class="section contact" id="contacto"><p class="eyebrow">{t.sections.contactEyebrow}</p><h2>{t.sections.contactTitle}</h2><p>{t.sections.contactText}</p><div class="contact-grid"><a class="button" href={whatsappUrl(t.whatsapp.contact)}>WhatsApp</a><a href={`mailto:${contact.email}`}>{contact.email}</a><span>{contact.hours}</span><span>{contact.city}</span><strong>{contact.appointmentNote}</strong></div><div class="contact-form"><div class="head"><p class="eyebrow">{t.sections.formEyebrow}</p><h2>{t.sections.formTitle}</h2></div><DiagnosticForm client:load lang={lang} whatsappNumber={contact.whatsappNumber} /></div></section>
+  </main>
+</BaseLayout>

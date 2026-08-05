@@ -14,6 +14,7 @@ export const seo = {
   description:
     "Reparación, mantenimiento, restauración, compra y venta de Macs antiguos y equipos Apple de colección en Ciudad de México.",
   canonical: "https://archivomac.mx/",
+  image: "https://archivomac.mx/marissa-lewis-PoL7eR-p4Z0-unsplash.jpg",
   keywords: [
     "reparación de Macs antiguos CDMX",
     "reparación Mac vintage México",
