@@ -1,4 +1,4 @@
-import { Bot, Send, Sparkles } from "lucide-react";
+import { Bot, Send, Sparkles, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
 type Language = "es" | "en" | "fr" | "de" | "it";
@@ -6,6 +6,7 @@ type Language = "es" | "en" | "fr" | "de" | "it";
 type OliviaChatProps = {
   lang: Language;
   whatsappNumber: string;
+  clientCode: string;
 };
 
 type Message = {
@@ -22,6 +23,8 @@ const copy = {
     placeholder: "Ej. Macintosh Classic no enciende, tengo fotos y serie...",
     send: "Enviar",
     whatsapp: "Enviar resumen por WhatsApp",
+    bubble: "Olivia AI",
+    close: "Cerrar Olivia AI",
     prompts: ["No enciende", "Quiero venderlo", "Restauración estética", "Recuperar datos"],
     fallback:
       "Puedo orientarte mejor si me compartes modelo, año aproximado, si enciende, síntoma principal, accesorios y fotos disponibles.",
@@ -44,6 +47,8 @@ const copy = {
     placeholder: "Ex. Macintosh Classic does not turn on, I have photos and serial...",
     send: "Send",
     whatsapp: "Send summary by WhatsApp",
+    bubble: "Olivia AI",
+    close: "Close Olivia AI",
     prompts: ["Does not turn on", "I want to sell it", "Cosmetic restoration", "Recover data"],
     fallback: "I can guide you better with model, approximate year, power state, main symptom, accessories, and available photos.",
     diagnosis: "For a serious diagnosis, record model, serial number, power supply, screen, startup sound, and any previous repair.",
@@ -61,6 +66,8 @@ const copy = {
     placeholder: "Ex. Macintosh Classic ne s'allume pas, j'ai des photos et le numéro de série...",
     send: "Envoyer",
     whatsapp: "Envoyer le résumé par WhatsApp",
+    bubble: "Olivia AI",
+    close: "Fermer Olivia AI",
     prompts: ["Ne s'allume pas", "Je veux le vendre", "Restauration esthétique", "Récupérer des données"],
     fallback:
       "Je peux mieux vous orienter avec le modèle, l'année approximative, l'état d'allumage, le symptôme principal, les accessoires et les photos disponibles.",
@@ -83,6 +90,8 @@ const copy = {
     placeholder: "Z. B. Macintosh Classic schaltet nicht ein, Fotos und Seriennummer vorhanden...",
     send: "Senden",
     whatsapp: "Zusammenfassung per WhatsApp senden",
+    bubble: "Olivia AI",
+    close: "Olivia AI schliessen",
     prompts: ["Schaltet nicht ein", "Ich möchte verkaufen", "Optische Restaurierung", "Daten retten"],
     fallback: "Ich kann besser helfen mit Modell, Jahr, Einschaltzustand, Hauptsymptom, Zubehör und verfügbaren Fotos.",
     diagnosis: "Für eine seriöse Diagnose sind Modell, Seriennummer, Netzteil, Bildschirm, Startton und frühere Reparaturen wichtig.",
@@ -99,6 +108,8 @@ const copy = {
     placeholder: "Es. Macintosh Classic non si accende, ho foto e numero di serie...",
     send: "Invia",
     whatsapp: "Invia riepilogo via WhatsApp",
+    bubble: "Olivia AI",
+    close: "Chiudi Olivia AI",
     prompts: ["Non si accende", "Voglio venderlo", "Restauro estetico", "Recuperare dati"],
     fallback: "Posso orientarti meglio con modello, anno, stato di accensione, sintomo principale, accessori e foto disponibili.",
     diagnosis: "Per una diagnosi seria servono modello, numero di serie, alimentazione, schermo, suono di avvio ed eventuali riparazioni precedenti.",
@@ -120,42 +131,78 @@ function answerFor(input: string, t: (typeof copy)["es"]) {
   return t.fallback;
 }
 
-export default function OliviaChat({ lang, whatsappNumber }: OliviaChatProps) {
+function visitorId() {
+  if (typeof window === "undefined") return "server";
+  const key = "olivia-visitor-id";
+  const current = window.localStorage.getItem(key);
+  if (current) return current;
+  const next = `visitor-${crypto.randomUUID?.() || Date.now()}`;
+  window.localStorage.setItem(key, next);
+  return next;
+}
+
+export default function OliviaChat({ lang, whatsappNumber, clientCode }: OliviaChatProps) {
   const t = copy[lang] ?? copy.es;
   const [messages, setMessages] = useState<Message[]>([{ role: "olivia", text: t.intro }]);
   const [draft, setDraft] = useState("");
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const summary = useMemo(() => messages.map((message) => `${message.role === "olivia" ? "Olivia" : "Cliente"}: ${message.text}`).join("\n"), [messages]);
 
-  function submit(text = draft) {
+  async function submit(text = draft) {
     const value = text.trim();
-    if (!value) return;
-    setMessages((current) => [...current, { role: "user", text: value }, { role: "olivia", text: answerFor(value, t) }]);
+    if (!value || loading) return;
+    setMessages((current) => [...current, { role: "user", text: value }]);
     setDraft("");
+    setLoading(true);
+    try {
+      const response = await fetch("https://olivia-ai.o7digital.com/api/olivia/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          clientCode,
+          source: "website",
+          language: lang,
+          message: value,
+          visitorId: visitorId(),
+          pageUrl: window.location.href,
+        }),
+      });
+      const data = await response.json();
+      const reply = data?.reply || data?.message || answerFor(value, t);
+      setMessages((current) => [...current, { role: "olivia", text: reply }]);
+    } catch {
+      setMessages((current) => [...current, { role: "olivia", text: answerFor(value, t) }]);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    <section className="section olivia-ai" id="olivia">
-      <div className="olivia-head">
-        <p className="eyebrow">{t.eyebrow}</p>
-        <h2>{t.title}</h2>
-      </div>
-      <div className="olivia-shell" aria-label="Olivia AI chat">
-        <div className="olivia-status"><Bot size={18} /><span>Olivia</span><Sparkles size={16} /></div>
-        <div className="olivia-log" aria-live="polite">
-          {messages.map((message, index) => (
-            <p className={`olivia-message ${message.role}`} key={`${message.role}-${index}`}>{message.text}</p>
-          ))}
+    <div className={`olivia-float ${open ? "is-open" : ""}`} id="olivia">
+      {open && (
+        <div className="olivia-panel" role="dialog" aria-label="Olivia AI chat">
+          <div className="olivia-status"><Bot size={18} /><span>Olivia</span><Sparkles size={16} /><button type="button" aria-label={t.close} onClick={() => setOpen(false)}><X size={18} /></button></div>
+          <div className="olivia-log" aria-live="polite">
+            {messages.map((message, index) => (
+              <p className={`olivia-message ${message.role}`} key={`${message.role}-${index}`}>{message.text}</p>
+            ))}
+            {loading && <p className="olivia-message olivia">Olivia...</p>}
+          </div>
+          <div className="olivia-prompts">
+            {t.prompts.map((prompt) => <button type="button" key={prompt} onClick={() => submit(prompt)}>{prompt}</button>)}
+          </div>
+          <form className="olivia-compose" onSubmit={(event) => { event.preventDefault(); submit(); }}>
+            <input value={draft} onChange={(event) => setDraft(event.target.value)} placeholder={t.placeholder} />
+            <button className="button" type="submit" aria-label={t.send}><Send size={16} />{t.send}</button>
+          </form>
+          <a className="olivia-whatsapp" href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`${t.summaryPrefix}\n\n${summary}`)}`}>{t.whatsapp}</a>
         </div>
-        <div className="olivia-prompts">
-          {t.prompts.map((prompt) => <button type="button" key={prompt} onClick={() => submit(prompt)}>{prompt}</button>)}
-        </div>
-        <form className="olivia-compose" onSubmit={(event) => { event.preventDefault(); submit(); }}>
-          <input value={draft} onChange={(event) => setDraft(event.target.value)} placeholder={t.placeholder} />
-          <button className="button" type="submit" aria-label={t.send}><Send size={16} />{t.send}</button>
-        </form>
-        <a className="olivia-whatsapp" href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`${t.summaryPrefix}\n\n${summary}`)}`}>{t.whatsapp}</a>
-      </div>
-    </section>
+      )}
+      <button className="olivia-bubble" type="button" onClick={() => setOpen((current) => !current)} aria-expanded={open}>
+        <span>{t.bubble}</span>
+      </button>
+    </div>
   );
 }

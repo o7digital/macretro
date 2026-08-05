@@ -19,7 +19,6 @@ export default function MobileNav({ nav }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const links = [
     [nav.services, "#servicios"],
-    ["Olivia", "#olivia"],
     [nav.collection, "#coleccion"],
     [nav.method, "#metodo"],
     [nav.faq, "#preguntas"],
