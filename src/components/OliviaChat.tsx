@@ -1,5 +1,16 @@
 import { Bot, Send, Sparkles, X } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+function useOliviaFloatingTheme() {
+  useEffect(() => {
+    if (document.querySelector('script[data-olivia-floating-theme]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://olivia-ai.o7digital.com/olivia-floating-theme.js';
+    script.defer = true;
+    script.dataset.oliviaFloatingTheme = 'true';
+    document.head.appendChild(script);
+  }, []);
+}
 
 type Language = "es" | "en" | "fr" | "de" | "it";
 
@@ -142,6 +153,7 @@ function visitorId() {
 }
 
 export default function OliviaChat({ lang, whatsappNumber, clientCode }: OliviaChatProps) {
+  useOliviaFloatingTheme();
   const t = copy[lang] ?? copy.es;
   const [messages, setMessages] = useState<Message[]>([{ role: "olivia", text: t.intro }]);
   const [draft, setDraft] = useState("");
