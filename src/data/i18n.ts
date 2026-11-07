@@ -35,17 +35,17 @@ export const content: any = {
       canonical: "https://archivomac.mx/",
       image: "https://archivomac.mx/marissa-lewis-PoL7eR-p4Z0-unsplash.jpg",
       keywords: [
-        "reparación de Macs antiguos CDMX",
-        "reparación Mac vintage México",
-        "restauración Macintosh",
-        "mantenimiento de Macs antiguos",
-        "modelos Mac retro",
-        "coleccionistas Apple México",
-        "reparación Macintosh Classic",
-        "reparación iBook G3",
-        "recap Macintosh",
-        "fuentes de poder Mac antiguas",
-        "recuperación de datos Mac antiguo"
+        "reparación de Macs antiguos México CDMX",
+        "reparación Mac vintage México CDMX",
+        "restauración Macintosh México CDMX",
+        "mantenimiento de Macs antiguos México CDMX",
+        "modelos Mac retro México CDMX",
+        "coleccionistas Apple México CDMX",
+        "reparación Macintosh Classic México CDMX",
+        "reparación iBook G3 México CDMX",
+        "recap Macintosh México CDMX",
+        "fuentes de poder Mac antiguas México CDMX",
+        "recuperación de datos Mac antiguo México CDMX"
       ]
     },
     nav: {
@@ -230,7 +230,7 @@ export const content: any = {
         "Repair, maintenance, restoration, valuation, and historical documentation for vintage Macs and collectible Apple computers in Mexico City.",
       canonical: "https://archivomac.mx/en/",
       image: "https://archivomac.mx/marissa-lewis-PoL7eR-p4Z0-unsplash.jpg",
-      keywords: ["vintage Mac repair Mexico City", "Macintosh restoration", "retro Mac models", "Apple collectors Mexico", "Macintosh Classic repair", "iBook G3 repair", "Mac recap service", "old Mac data recovery"]
+      keywords: ["vintage Mac repair Mexico CDMX", "Macintosh restoration Mexico CDMX", "retro Mac models Mexico CDMX", "Apple collectors Mexico CDMX", "Macintosh Classic repair Mexico CDMX", "iBook G3 repair Mexico CDMX", "Mac recap service Mexico CDMX", "old Mac data recovery Mexico CDMX"]
     },
     nav: {
       services: "Services",
@@ -368,7 +368,7 @@ export const content: any = {
         "Réparation, maintenance, restauration, estimation et documentation historique de Macs anciens et d'ordinateurs Apple de collection à Mexico.",
       canonical: "https://archivomac.mx/fr/",
       image: "https://archivomac.mx/marissa-lewis-PoL7eR-p4Z0-unsplash.jpg",
-      keywords: ["réparation Mac ancien Mexico", "restauration Macintosh", "modèles Mac rétro", "collection Apple Mexique", "réparation Macintosh Classic", "réparation iBook G3", "recap Macintosh", "récupération données vieux Mac"]
+      keywords: ["réparation Mac ancien Mexico CDMX", "restauration Macintosh Mexico CDMX", "modèles Mac rétro Mexico CDMX", "collection Apple Mexico CDMX", "réparation Macintosh Classic Mexico CDMX", "réparation iBook G3 Mexico CDMX", "recap Macintosh Mexico CDMX", "récupération données vieux Mac Mexico CDMX"]
     },
     nav: {
       services: "Services",
@@ -559,7 +559,7 @@ content.de = {
     description: "Reparatur, Wartung, Restaurierung, Bewertung und historische Dokumentation alter Macs und sammelbarer Apple-Computer in Mexiko-Stadt.",
     canonical: "https://archivomac.mx/de/",
     image: content.en.seo.image,
-    keywords: ["alter Mac Reparatur Mexiko-Stadt", "Macintosh Restaurierung", "Retro Mac Modelle", "Apple Sammler Mexiko"]
+    keywords: ["alter Mac Reparatur Mexico CDMX", "Macintosh Restaurierung Mexico CDMX", "Retro Mac Modelle Mexico CDMX", "Apple Sammler Mexico CDMX"]
   },
   nav: { services: "Services", collection: "Sammlung", method: "Methode", faq: "FAQ", contact: "Kontakt", cta: "Mac bewerten", open: "Menü öffnen", close: "Menü schließen", label: "Hauptnavigation" },
   top: ["Nur mit Termin · Mexiko-Stadt", "Spezialisierte Diagnose in 24-48 Stunden"],
@@ -589,7 +589,7 @@ content.it = {
     description: "Riparazione, manutenzione, restauro, valutazione e documentazione storica di Mac vintage e computer Apple da collezione a Città del Messico.",
     canonical: "https://archivomac.mx/it/",
     image: content.en.seo.image,
-    keywords: ["riparazione Mac vintage Città del Messico", "restauro Macintosh", "modelli Mac retro", "collezionisti Apple Messico"]
+    keywords: ["riparazione Mac vintage Mexico CDMX", "restauro Macintosh Mexico CDMX", "modelli Mac retro Mexico CDMX", "collezionisti Apple Mexico CDMX"]
   },
   nav: { services: "Servizi", collection: "Collezione", method: "Metodo", faq: "FAQ", contact: "Contatto", cta: "Valuta il mio Mac", open: "Apri menu", close: "Chiudi menu", label: "Navigazione principale" },
   top: ["Su appuntamento · Città del Messico", "Diagnosi specializzata in 24-48 ore"],

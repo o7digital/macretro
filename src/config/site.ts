@@ -16,16 +16,16 @@ export const seo = {
   canonical: "https://archivomac.mx/",
   image: "https://archivomac.mx/marissa-lewis-PoL7eR-p4Z0-unsplash.jpg",
   keywords: [
-    "reparación de Macs antiguos CDMX",
-    "reparación Mac vintage México",
-    "restauración Macintosh",
-    "mantenimiento de Macs antiguos",
-    "venta de Macs de colección",
-    "compra de computadoras Apple antiguas",
-    "valuación de Macintosh",
-    "reparación de iMac G3",
-    "reparación Power Mac",
-    "coleccionistas Apple México"
+    "reparación de Macs antiguos México CDMX",
+    "reparación Mac vintage México CDMX",
+    "restauración Macintosh México CDMX",
+    "mantenimiento de Macs antiguos México CDMX",
+    "venta de Macs de colección México CDMX",
+    "compra de computadoras Apple antiguas México CDMX",
+    "valuación de Macintosh México CDMX",
+    "reparación de iMac G3 México CDMX",
+    "reparación Power Mac México CDMX",
+    "coleccionistas Apple México CDMX"
   ]
 };
 
